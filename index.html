@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inscripción · Taller de Constelaciones Familiares</title>
+<meta name="description" content="Sábado 14 de noviembre, 16 a 19 hs · Centro Om Shanti, Villa Adelina · Facilitan Claudia Monge y Caro Sartori">
+<meta property="og:title" content="Taller de Constelaciones Familiares · Inscripción">
+<meta property="og:description" content="Sábado 14 de noviembre, 16 a 19 hs · Centro Om Shanti, Villa Adelina · Facilitan Claudia Monge y Caro Sartori">
+<meta property="og:image" content="https://julyolmoss-cyber.github.io/taller-constelaciones/flyer.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Cielo violeta al atardecer arriba, pergamino claro para el formulario, oro como hilo conductor */
+  :root {
+    --noche: #1f0d26;
+    --ciruela: #3d1a47;
+    --violeta: #6c3a7a;
+    --lavanda: #b58cc4;
+    --oro: #d9b46a;
+    --oro-claro: #f1dca6;
+    --crema: #fbf5ec;
+    --papel: #fffdf9;
+    --tinta: #2c1633;
+    --tinta-suave: #6d5a72;
+    --linea: #e6d6c4;
+    --error: #b3364a;
+    --ok: #3f7d5c;
+    --f-titulo: "Cinzel", "Trajan Pro", Georgia, serif;
+    --f-verso: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --f-texto: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; }
+  body {
+    background: var(--crema);
+    color: var(--tinta);
+    font-family: var(--f-texto);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--violeta); }
+  :focus-visible { outline: 2px solid var(--oro); outline-offset: 3px; }
+
+  /* ---------- Cabecera ---------- */
+  .cielo {
+    position: relative;
+    overflow: hidden;
+    color: var(--crema);
+    text-align: center;
+    background:
+      radial-gradient(ellipse 70% 45% at 50% 108%, rgba(255, 196, 120, .55), transparent 70%),
+      radial-gradient(ellipse 90% 60% at 50% 100%, rgba(214, 122, 160, .35), transparent 75%),
+      linear-gradient(180deg, var(--noche) 0%, var(--ciruela) 45%, var(--violeta) 85%, #9a5a8e 100%);
+    padding: 56px max(16px, env(safe-area-inset-right, 0px)) 120px max(16px, env(safe-area-inset-left, 0px));
+  }
+  #estrellas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .cielo-contenido { position: relative; max-width: 720px; margin: 0 auto; display: grid; justify-items: center; gap: 6px; }
+  .loto { width: 64px; height: auto; color: var(--oro); margin-bottom: 8px; filter: drop-shadow(0 0 12px rgba(241, 220, 166, .45)); }
+  .antetitulo {
+    display: flex; align-items: center; gap: 14px;
+    font-family: var(--f-titulo); letter-spacing: .32em; font-size: clamp(13px, 2.6vw, 17px);
+  }
+  .antetitulo::before, .antetitulo::after { content: ""; width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--oro)); }
+  .antetitulo::after { transform: scaleX(-1); }
+  h1 {
+    margin: 0;
+    font-family: var(--f-titulo); font-weight: 700;
+    font-size: clamp(30px, 7.4vw, 60px); line-height: 1.02; letter-spacing: .01em;
+    text-wrap: balance;
+    background: linear-gradient(180deg, #fffaf0 30%, var(--oro-claro) 75%, var(--oro) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    text-shadow: 0 2px 30px rgba(241, 220, 166, .15);
+  }
+  .subtitulo { font-family: var(--f-titulo); letter-spacing: .28em; font-size: clamp(10px, 2.1vw, 13px); opacity: .9; }
+  .lema {
+    margin: 22px 0 6px;
+    font-family: var(--f-verso); font-style: italic; font-weight: 500;
+    font-size: clamp(24px, 5vw, 36px); line-height: 1.15;
+    color: var(--oro-claro);
+  }
+  .facilitan { margin-top: 18px; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; opacity: .8; }
+  .nombres { font-family: var(--f-titulo); font-weight: 600; letter-spacing: .08em; font-size: clamp(15px, 3.2vw, 20px); }
+
+  /* ---------- Datos del taller ---------- */
+  .envoltura { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .datos {
+    position: relative; margin: -76px auto 0; max-width: 760px;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    background: var(--ciruela);
+    border: 1px solid rgba(217, 180, 106, .5);
+    border-radius: 18px;
+    color: var(--crema);
+    box-shadow: 0 20px 50px -20px rgba(31, 13, 38, .6);
+  }
+  .dato { padding: 18px 14px; display: grid; gap: 2px; justify-items: center; text-align: center; }
+  .dato + .dato { border-left: 1px solid rgba(217, 180, 106, .28); }
+  .dato svg { width: 26px; height: 26px; color: var(--oro); margin-bottom: 4px; }
+  .dato small { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; opacity: .7; }
+  .dato strong { font-family: var(--f-titulo); font-weight: 600; font-size: 15px; letter-spacing: .04em; line-height: 1.25; }
+  .dato .precio { font-size: 20px; color: var(--oro-claro); }
+
+  /* ---------- Formulario ---------- */
+  main { max-width: 640px; margin: 0 auto; padding-block: 44px 28px; display: grid; gap: 22px; }
+  .intro { text-align: center; font-family: var(--f-verso); font-size: 20px; line-height: 1.45; color: var(--tinta-suave); margin: 0 auto; max-width: 30em; }
+  .bloque {
+    background: var(--papel);
+    border: 1px solid var(--linea);
+    border-radius: 18px;
+    padding: 26px clamp(18px, 4vw, 30px) 28px;
+    display: grid; gap: 18px;
+  }
+  .bloque-cabecera { display: flex; align-items: center; gap: 14px; }
+  .paso {
+    flex: none; width: 36px; height: 36px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: var(--f-titulo); font-weight: 600; font-size: 15px;
+    color: var(--ciruela); border: 1px solid var(--oro);
+    background: radial-gradient(circle at 50% 35%, #fff8e6, #f3e3bf);
+  }
+  h2 { margin: 0; font-family: var(--f-titulo); font-weight: 600; font-size: 19px; letter-spacing: .06em; color: var(--ciruela); }
+  .bloque-cabecera p { margin: 0; font-size: 13px; color: var(--tinta-suave); }
+
+  .campos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .campo { display: grid; gap: 6px; min-width: 0; }
+  .campo.ancho { grid-column: 1 / -1; }
+  label, .pregunta { font-size: 13px; font-weight: 600; color: var(--tinta); }
+  .opcional { font-weight: 400; color: var(--tinta-suave); }
+  input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea {
+    width: 100%; font: inherit; color: var(--tinta);
+    background: var(--crema);
+    border: 1px solid var(--linea); border-radius: 10px;
+    padding: 12px 14px;
+    transition: border-color .2s, box-shadow .2s, background .2s;
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--lavanda); background: #fff; box-shadow: 0 0 0 4px rgba(181, 140, 196, .22); }
+  .campo.con-error input, .campo.con-error select { border-color: var(--error); }
+  .msj-error { font-size: 12px; color: var(--error); min-height: 0; }
+  .msj-error:empty { display: none; }
+
+  /* Pago */
+  .monto { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-bottom: 14px; border-bottom: 1px dashed var(--linea); }
+  .monto span { font-size: 13px; color: var(--tinta-suave); }
+  .monto strong { font-family: var(--f-titulo); font-size: 28px; color: var(--ciruela); font-variant-numeric: tabular-nums; }
+  .cuentas { display: grid; gap: 10px; }
+  .cuenta {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 12px 12px 16px; border-radius: 12px;
+    background: linear-gradient(135deg, #f7eefa, #fbf3e6);
+    border: 1px solid #ead9ef;
+  }
+  .cuenta div { min-width: 0; flex: 1; }
+  .cuenta small { display: block; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--tinta-suave); }
+  .cuenta code { display: block; font-family: var(--f-texto); font-weight: 600; font-size: 15px; color: var(--tinta); overflow-wrap: anywhere; user-select: all; font-variant-numeric: tabular-nums; }
+  .copiar {
+    flex: none; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer;
+    padding: 8px 14px; border-radius: 999px;
+    border: 1px solid var(--violeta); background: transparent; color: var(--violeta);
+    transition: background .2s, color .2s;
+  }
+  .copiar:hover { background: var(--violeta); color: #fff; }
+  .copiar.hecho { background: var(--ok); border-color: var(--ok); color: #fff; }
+  .boton-pago {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    text-decoration: none; font-weight: 600; letter-spacing: .02em;
+    padding: 14px 18px; border-radius: 12px;
+    color: var(--ciruela); background: linear-gradient(135deg, var(--oro-claro), var(--oro));
+    box-shadow: 0 8px 20px -10px rgba(140, 100, 30, .6);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .boton-pago:hover { transform: translateY(-1px); box-shadow: 0 12px 24px -10px rgba(140, 100, 30, .7); }
+  .boton-pago svg { width: 18px; height: 18px; }
+
+  .subida {
+    position: relative; display: grid; justify-items: center; gap: 4px; text-align: center;
+    padding: 22px 16px; border-radius: 14px;
+    border: 1.5px dashed var(--lavanda); background: #fbf7fc;
+    cursor: pointer; transition: background .2s, border-color .2s;
+  }
+  .subida:hover, .subida.arrastrando { background: #f3e9f7; border-color: var(--violeta); }
+  .subida input { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; }
+  .subida svg { width: 30px; height: 30px; color: var(--violeta); }
+  .subida strong { font-size: 14px; color: var(--ciruela); }
+  .subida span { font-size: 12px; color: var(--tinta-suave); }
+  .subida.con-archivo { border-style: solid; border-color: var(--ok); background: #f1f8f3; }
+  .subida.con-archivo svg { color: var(--ok); }
+  .alternativa { font-size: 13px; color: var(--tinta-suave); margin: 0; }
+  .alternativa b { color: var(--tinta); font-weight: 600; user-select: all; }
+
+  /* Opciones tipo píldora */
+  .opciones { display: flex; flex-wrap: wrap; gap: 8px; }
+  .opcion { position: relative; }
+  .opcion input { position: absolute; opacity: 0; pointer-events: none; }
+  .opcion span {
+    display: inline-block; padding: 9px 16px; border-radius: 999px;
+    border: 1px solid var(--linea); background: var(--crema);
+    font-size: 13px; cursor: pointer; transition: all .2s;
+  }
+  .opcion span:hover { border-color: var(--lavanda); }
+  .opcion input:checked + span { background: var(--ciruela); border-color: var(--ciruela); color: var(--crema); }
+  .opcion input:focus-visible + span { outline: 2px solid var(--oro); outline-offset: 2px; }
+
+  .enviar {
+    font: inherit; font-family: var(--f-titulo); font-weight: 600; font-size: 16px; letter-spacing: .14em;
+    width: 100%; padding: 18px; border: 0; border-radius: 14px; cursor: pointer;
+    color: var(--crema);
+    background: linear-gradient(135deg, var(--violeta), var(--ciruela) 60%, var(--noche));
+    box-shadow: 0 14px 30px -14px rgba(61, 26, 71, .8), inset 0 0 0 1px rgba(217, 180, 106, .45);
+    transition: transform .2s, filter .2s;
+  }
+  .enviar:hover { transform: translateY(-1px); filter: brightness(1.08); }
+  .enviar:disabled { cursor: wait; filter: grayscale(.3) brightness(.9); transform: none; }
+  .aviso-error { margin: 0; padding: 12px 16px; border-radius: 10px; background: #fbeaec; color: var(--error); font-size: 13px; }
+
+  .otra-cosa { text-align: center; font-size: 13px; color: var(--tinta-suave); }
+  .enlace-boton { font: inherit; background: none; border: 0; padding: 0; color: var(--violeta); text-decoration: underline; cursor: pointer; font-weight: 600; }
+
+  /* Confirmación */
+  .gracias { text-align: center; justify-items: center; padding-block: 40px; }
+  .gracias .loto { color: var(--oro); width: 70px; margin: 0; filter: none; }
+  .gracias h2 { font-size: 24px; }
+  .gracias p { margin: 0; max-width: 30em; color: var(--tinta-suave); }
+  .gracias .verso { font-family: var(--f-verso); font-style: italic; font-size: 22px; color: var(--violeta); }
+
+  footer { text-align: center; padding: 10px 16px 40px; font-size: 12px; color: var(--tinta-suave); display: grid; gap: 4px; }
+  footer b { color: var(--tinta); font-weight: 600; user-select: all; }
+
+  @media (max-width: 620px) {
+    .datos { grid-template-columns: 1fr 1fr; }
+    .dato:nth-child(3) { border-left: 0; }
+    .dato:nth-child(n+3) { border-top: 1px solid rgba(217, 180, 106, .28); }
+    .campos { grid-template-columns: 1fr; }
+    .cielo { padding-top: 40px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="cielo">
+  <canvas id="estrellas" aria-hidden="true"></canvas>
+  <div class="cielo-contenido">
+    <svg class="loto" viewBox="0 0 64 44" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+      <path d="M32 40C26 32 25 20 32 6c7 14 6 26 0 34Z"/>
+      <path d="M31 40C22 37 15 28 15 16c9 4 15 12 16 24Z"/>
+      <path d="M33 40c9-3 16-12 16-24-9 4-15 12-16 24Z"/>
+      <path d="M30 40C19 41 9 36 3 27c10-2 20 3 27 13Z"/>
+      <path d="M34 40c11 1 21-4 27-13-10-2-20 3-27 13Z"/>
+    </svg>
+    <div class="antetitulo">TALLER DE</div>
+    <h1>Constelaciones<br>Familiares</h1>
+    <div class="subtitulo">Y NUEVAS CONSTELACIONES</div>
+    <p class="lema">Todo lo vivido<br>nos trajo hasta aquí</p>
+    <div class="facilitan">Facilitan</div>
+    <div class="nombres">Claudia Monge &amp; Caro Sartori</div>
+  </div>
+</header>
+
+<div class="envoltura">
+  <section class="datos" aria-label="Datos del taller">
+    <div class="dato">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+      <small>Sábado</small><strong>14 de noviembre</strong>
+    </div>
+    <div class="dato">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <small>Horario</small><strong>16 a 19 hs</strong>
+    </div>
+    <div class="dato">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+      <small>Centro Om Shanti</small><strong>Villa Adelina</strong>
+    </div>
+    <div class="dato">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7L12 3Z"/></svg>
+      <small>Valor</small><strong class="precio">$25.000</strong>
+    </div>
+  </section>
+</div>
+
+<div class="envoltura">
+<main>
+
+  <!-- ===== Inscripción ===== -->
+  <form id="form-inscripcion" novalidate>
+    <div style="display:grid;gap:22px">
+      <p class="intro">Completá tus datos para reservar tu lugar. Los cupos son limitados.</p>
+
+      <section class="bloque">
+        <div class="bloque-cabecera">
+          <div class="paso">I</div>
+          <div><h2>Tus datos</h2></div>
+        </div>
+        <div class="campos">
+          <div class="campo ancho">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Ej: María Laura Fernández" required>
+            <div class="msj-error"></div>
+          </div>
+          <div class="campo">
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" name="edad" inputmode="numeric" min="1" max="120" placeholder="Ej: 42" required>
+            <div class="msj-error"></div>
+          </div>
+          <div class="campo">
+            <label for="telefono">Teléfono / WhatsApp</label>
+            <input type="tel" id="telefono" name="telefono" autocomplete="tel" placeholder="Ej: 11 5555 5555" required>
+            <div class="msj-error"></div>
+          </div>
+          <div class="campo ancho">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="tu@email.com" required>
+            <div class="msj-error"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bloque">
+        <div class="bloque-cabecera">
+          <div class="paso">II</div>
+          <div><h2>Pago</h2><p>Por transferencia o con el link de pago.</p></div>
+        </div>
+        <div class="monto"><span>Valor del taller</span><strong>$25.000</strong></div>
+        <div class="cuentas">
+          <div class="cuenta">
+            <div><small>Alias</small><code id="alias">Constelar.sartori</code></div>
+            <button type="button" class="copiar" data-copiar="alias">Copiar</button>
+          </div>
+          <div class="cuenta">
+            <div><small>CBU</small><code id="cbu">0070358930004009252579</code></div>
+            <button type="button" class="copiar" data-copiar="cbu">Copiar</button>
+          </div>
+        </div>
+        <a id="link-pago" class="boton-pago" href="#" target="_blank" rel="noopener" hidden>
+          Pagar con link de pago
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+
+        <div class="campo">
+          <span class="pregunta">Comprobante de pago <span class="opcional">(podés subirlo ahora o después)</span></span>
+          <label class="subida" id="subida-insc">
+            <input type="file" id="comprobante" accept="image/*,application/pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+            <strong>Subir comprobante</strong>
+            <span>Foto o PDF, hasta 10 MB</span>
+          </label>
+          <div class="msj-error"></div>
+        </div>
+        <p class="alternativa">También podés enviarlo a <b>carolinaa.sartori@gmail.com</b> o por WhatsApp al <b>+54 11 5125 2854</b>.</p>
+      </section>
+
+      <section class="bloque">
+        <div class="bloque-cabecera">
+          <div class="paso">III</div>
+          <div><h2>Para terminar</h2></div>
+        </div>
+        <div class="campo">
+          <span class="pregunta" id="p-info">¿Te gustaría recibir información sobre otros talleres con la facilitadora Carolina Sartori?</span>
+          <div class="opciones" role="radiogroup" aria-labelledby="p-info">
+            <label class="opcion"><input type="radio" name="info" value="Sí" required><span>Sí, me encantaría</span></label>
+            <label class="opcion"><input type="radio" name="info" value="No"><span>No, gracias</span></label>
+          </div>
+          <div class="msj-error"></div>
+        </div>
+        <div class="campo">
+          <span class="pregunta" id="p-como">¿Cómo te enteraste del taller?</span>
+          <div class="opciones" role="radiogroup" aria-labelledby="p-como">
+            <label class="opcion"><input type="radio" name="como" value="Instagram" required><span>Instagram</span></label>
+            <label class="opcion"><input type="radio" name="como" value="Facebook"><span>Facebook</span></label>
+            <label class="opcion"><input type="radio" name="como" value="WhatsApp"><span>WhatsApp</span></label>
+            <label class="opcion"><input type="radio" name="como" value="Recomendación"><span>Me lo recomendaron</span></label>
+            <label class="opcion"><input type="radio" name="como" value="Centro Om Shanti"><span>Centro Om Shanti</span></label>
+            <label class="opcion"><input type="radio" name="como" value="Otro"><span>Otro</span></label>
+          </div>
+          <input type="text" id="como-otro" placeholder="Contanos cómo" hidden>
+          <div class="msj-error"></div>
+        </div>
+      </section>
+
+      <p class="aviso-error" id="error-insc" hidden></p>
+      <button type="submit" class="enviar" id="btn-insc">Inscribirme</button>
+      <p class="otra-cosa">¿Ya te inscribiste y querés enviar el comprobante? <button type="button" class="enlace-boton" data-ir="comprobante">Subilo acá</button></p>
+    </div>
+  </form>
+
+  <!-- ===== Subir comprobante después ===== -->
+  <form id="form-comprobante" novalidate hidden>
+    <div style="display:grid;gap:22px">
+      <section class="bloque">
+        <div class="bloque-cabecera">
+          <div class="paso">✦</div>
+          <div><h2>Enviar comprobante</h2><p>Usá el mismo email con el que te inscribiste.</p></div>
+        </div>
+        <div class="campo">
+          <label for="email2">Email de la inscripción</label>
+          <input type="email" id="email2" autocomplete="email" placeholder="tu@email.com" required>
+          <div class="msj-error"></div>
+        </div>
+        <div class="campo">
+          <label class="subida" id="subida-desp">
+            <input type="file" id="comprobante2" accept="image/*,application/pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+            <strong>Subir comprobante</strong>
+            <span>Foto o PDF, hasta 10 MB</span>
+          </label>
+          <div class="msj-error"></div>
+        </div>
+        <p class="aviso-error" id="error-comp" hidden></p>
+        <button type="submit" class="enviar" id="btn-comp">Enviar comprobante</button>
+      </section>
+      <p class="otra-cosa">¿Todavía no te inscribiste? <button type="button" class="enlace-boton" data-ir="inscripcion">Inscribite acá</button></p>
+    </div>
+  </form>
+
+  <!-- ===== Confirmación ===== -->
+  <section class="bloque gracias" id="gracias" hidden>
+    <svg class="loto" viewBox="0 0 64 44" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+      <path d="M32 40C26 32 25 20 32 6c7 14 6 26 0 34Z"/><path d="M31 40C22 37 15 28 15 16c9 4 15 12 16 24Z"/><path d="M33 40c9-3 16-12 16-24-9 4-15 12-16 24Z"/><path d="M30 40C19 41 9 36 3 27c10-2 20 3 27 13Z"/><path d="M34 40c11 1 21-4 27-13-10-2-20 3-27 13Z"/>
+    </svg>
+    <h2 id="gracias-titulo">¡Gracias!</h2>
+    <p id="gracias-texto"></p>
+    <p class="verso">Te esperamos el sábado 14 de noviembre<br>en el Centro Om Shanti.</p>
+  </section>
+
+</main>
+</div>
+
+<footer>
+  <span>Consultas: <b>carolinaa.sartori@gmail.com</b> · <b>+54 11 5125 2854</b></span>
+</footer>
+
+<script>
+/* ===== Configuración ===== */
+// Pegá acá el link de pago (Mercado Pago u otro). Si queda vacío, el botón no se muestra.
+var LINK_PAGO = "https://mpago.la/1EPsuD5";
+var MAX_MB = 10;
+
+/* ===== Cielo con constelaciones ===== */
+(function () {
+  var c = document.getElementById("estrellas"), ctx = c.getContext("2d");
+  var reducido = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var estrellas = [], grupos = [], w, h, dpr;
+  function iniciar() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = c.offsetWidth; h = c.offsetHeight;
+    c.width = w * dpr; c.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    estrellas = [];
+    var n = Math.round(w * h / 2600);
+    for (var i = 0; i < n; i++) estrellas.push({ x: Math.random() * w, y: Math.random() * h * .8, r: Math.random() * 1.2 + .2, f: Math.random() * 6.28, v: .5 + Math.random() * 1.5 });
+    // Pequeñas "constelaciones familiares": grupos de puntos unidos por hilos dorados
+    grupos = [];
+    var zonas = w < 620 ? [[.12, .2], [.86, .26]] : [[.1, .18], [.88, .22], [.16, .62], [.84, .64]];
+    zonas.forEach(function (z) {
+      var cx = z[0] * w, cy = z[1] * h, pts = [], k = 4 + Math.floor(Math.random() * 3);
+      for (var j = 0; j < k; j++) pts.push({ x: cx + (Math.random() - .5) * 120, y: cy + (Math.random() - .5) * 90, f: Math.random() * 6.28 });
+      grupos.push(pts);
+    });
+  }
+  function dibujar(t) {
+    ctx.clearRect(0, 0, w, h);
+    var s = t / 1000;
+    estrellas.forEach(function (e) {
+      var a = .35 + .45 * Math.sin(s * e.v + e.f);
+      ctx.fillStyle = "rgba(255,246,225," + a.toFixed(3) + ")";
+      ctx.beginPath(); ctx.arc(e.x, e.y, e.r, 0, 6.283); ctx.fill();
+    });
+    grupos.forEach(function (pts, gi) {
+      var hilo = .18 + .12 * Math.sin(s * .6 + gi);
+      ctx.strokeStyle = "rgba(217,180,106," + hilo.toFixed(3) + ")";
+      ctx.lineWidth = .8;
+      ctx.beginPath();
+      pts.forEach(function (p, i) {
+        var x = p.x + Math.sin(s * .3 + p.f) * 3, y = p.y + Math.cos(s * .25 + p.f) * 3;
+        i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+      });
+      ctx.stroke();
+      pts.forEach(function (p) {
+        var x = p.x + Math.sin(s * .3 + p.f) * 3, y = p.y + Math.cos(s * .25 + p.f) * 3;
+        var g = ctx.createRadialGradient(x, y, 0, x, y, 7);
+        g.addColorStop(0, "rgba(255,240,200,.95)"); g.addColorStop(1, "rgba(255,240,200,0)");
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, 7, 0, 6.283); ctx.fill();
+      });
+    });
+    if (!reducido) requestAnimationFrame(dibujar);
+  }
+  iniciar(); requestAnimationFrame(dibujar);
+  var to; window.addEventListener("resize", function () { clearTimeout(to); to = setTimeout(function () { iniciar(); if (reducido) dibujar(0); }, 150); });
+})();
+
+/* ===== Link de pago ===== */
+if (LINK_PAGO) { var lp = document.getElementById("link-pago"); lp.href = LINK_PAGO; lp.hidden = false; }
+
+/* ===== Copiar alias / CBU ===== */
+document.querySelectorAll(".copiar").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var el = document.getElementById(b.dataset.copiar), txt = el.textContent.trim();
+    function listo() { b.textContent = "¡Copiado!"; b.classList.add("hecho"); setTimeout(function () { b.textContent = "Copiar"; b.classList.remove("hecho"); }, 1800); }
+    function seleccionar() { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); try { document.execCommand("copy") && listo(); } catch (e) {} }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(listo, seleccionar); else seleccionar();
+  });
+});
+
+/* ===== Archivos ===== */
+var archivos = {};
+function prepararSubida(inputId, cajaId) {
+  var inp = document.getElementById(inputId), caja = document.getElementById(cajaId), err = caja.parentElement.querySelector(".msj-error");
+  ["dragenter", "dragover"].forEach(function (ev) { caja.addEventListener(ev, function () { caja.classList.add("arrastrando"); }); });
+  ["dragleave", "drop"].forEach(function (ev) { caja.addEventListener(ev, function () { caja.classList.remove("arrastrando"); }); });
+  inp.addEventListener("change", function () {
+    var f = inp.files[0]; err.textContent = ""; archivos[inputId] = null;
+    caja.classList.remove("con-archivo");
+    caja.querySelector("strong").textContent = "Subir comprobante";
+    caja.querySelector("span").textContent = "Foto o PDF, hasta " + MAX_MB + " MB";
+    if (!f) return;
+    if (f.size > MAX_MB * 1024 * 1024) { err.textContent = "El archivo pesa más de " + MAX_MB + " MB. Probá con una captura de pantalla."; inp.value = ""; return; }
+    if (!/^image\/|application\/pdf/.test(f.type)) { err.textContent = "Subí una imagen o un PDF."; inp.value = ""; return; }
+    var lector = new FileReader();
+    lector.onload = function () {
+      archivos[inputId] = { nombre: f.name, tipo: f.type, datos: String(lector.result).split(",")[1] };
+      caja.classList.add("con-archivo");
+      caja.querySelector("strong").textContent = "Comprobante listo";
+      caja.querySelector("span").textContent = f.name;
+    };
+    lector.readAsDataURL(f);
+  });
+}
+prepararSubida("comprobante", "subida-insc");
+prepararSubida("comprobante2", "subida-desp");
+
+/* ===== "Otro" en cómo te enteraste ===== */
+var comoOtro = document.getElementById("como-otro");
+document.querySelectorAll('input[name="como"]').forEach(function (r) {
+  r.addEventListener("change", function () { comoOtro.hidden = r.value !== "Otro" || !r.checked; if (!comoOtro.hidden) comoOtro.focus(); });
+});
+
+/* ===== Cambiar entre vistas ===== */
+var fInsc = document.getElementById("form-inscripcion"), fComp = document.getElementById("form-comprobante"), gracias = document.getElementById("gracias");
+function mostrar(vista) {
+  fInsc.hidden = vista !== "inscripcion"; fComp.hidden = vista !== "comprobante"; gracias.hidden = vista !== "gracias";
+  document.querySelector("main").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+document.querySelectorAll("[data-ir]").forEach(function (b) { b.addEventListener("click", function () { mostrar(b.dataset.ir); }); });
+
+/* ===== Validación ===== */
+function marcar(el, msj) {
+  var campo = el.closest(".campo"), err = campo.querySelector(".msj-error");
+  campo.classList.toggle("con-error", !!msj); err.textContent = msj || "";
+  return !msj;
+}
+var reEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+/* ===== Envío al servidor (Google Apps Script) ===== */
+var SERVIDOR = "https://script.google.com/macros/s/AKfycbylhbzWlCnTY_HrwtpMY4K_nIkJ5zaQ2jGLWNBdtcg4q44sMBhk1iNKPWkfQAKUiLVl2g/exec";
+function llamar(fn, datos) {
+  return new Promise(function (ok, mal) {
+    if (window.google && google.script && google.script.run) {
+      google.script.run.withSuccessHandler(ok).withFailureHandler(function (e) { mal(e && e.message ? e.message : String(e)); })[fn](datos);
+    } else if (location.protocol === "file:") {
+      // Vista previa local: simula el guardado
+      setTimeout(function () { ok({ ok: true, demo: true }); }, 900);
+    } else {
+      // Página publicada: se envía como texto plano para que el navegador no pida permisos extra
+      fetch(SERVIDOR, { method: "POST", body: JSON.stringify({ accion: fn, datos: datos }) })
+        .then(function (r) { return r.json(); })
+        .then(function (r) { r && r.ok ? ok(r) : mal(r && r.error); })
+        .catch(function () { mal("No pudimos conectarnos. Revisá tu conexión e intentá de nuevo."); });
+    }
+  });
+}
+function errorAmigable(m) {
+  m = String(m || "").replace(/^Error:\s*/, "");
+  return m && m.length < 200 ? m : "No pudimos guardar los datos. Revisá tu conexión e intentá de nuevo.";
+}
+
+fInsc.addEventListener("submit", function (ev) {
+  ev.preventDefault();
+  var nombre = document.getElementById("nombre"), edad = document.getElementById("edad"), tel = document.getElementById("telefono"), email = document.getElementById("email");
+  var info = fInsc.querySelector('input[name="info"]:checked'), como = fInsc.querySelector('input[name="como"]:checked');
+  var v = [
+    marcar(nombre, nombre.value.trim().split(/\s+/).length < 2 ? "Escribí tu nombre y apellido." : ""),
+    marcar(edad, !(+edad.value >= 1 && +edad.value <= 120) ? "Escribí tu edad en números." : ""),
+    marcar(tel, tel.value.replace(/\D/g, "").length < 8 ? "Escribí un teléfono válido, con característica." : ""),
+    marcar(email, !reEmail.test(email.value.trim()) ? "Revisá el email, parece incompleto." : ""),
+    marcar(fInsc.querySelector('input[name="info"]'), !info ? "Elegí una opción." : ""),
+    marcar(fInsc.querySelector('input[name="como"]'), !como ? "Elegí una opción." : "")
+  ];
+  if (v.indexOf(false) !== -1) { var p = fInsc.querySelector(".con-error"); p && p.scrollIntoView({ behavior: "smooth", block: "center" }); return; }
+
+  var btn = document.getElementById("btn-insc"), aviso = document.getElementById("error-insc");
+  btn.disabled = true; btn.textContent = "Enviando…"; aviso.hidden = true;
+  var datos = {
+    nombre: nombre.value.trim(), edad: edad.value.trim(), telefono: tel.value.trim(), email: email.value.trim(),
+    info: info.value, como: como.value === "Otro" && comoOtro.value.trim() ? "Otro: " + comoOtro.value.trim() : como.value,
+    archivo: archivos.comprobante || null
+  };
+  llamar("registrar", datos).then(function () {
+    var nom = datos.nombre.split(/\s+/)[0];
+    document.getElementById("gracias-titulo").textContent = "¡Gracias, " + nom + "!";
+    document.getElementById("gracias-texto").textContent = datos.archivo
+      ? "Recibimos tu inscripción y tu comprobante de pago. Tu lugar quedó reservado."
+      : "Recibimos tu inscripción. Para confirmar tu lugar, enviá el comprobante de pago desde este mismo link (opción “Subilo acá”), a carolinaa.sartori@gmail.com o por WhatsApp al +54 11 5125 2854.";
+    mostrar("gracias");
+  }).catch(function (m) { aviso.textContent = errorAmigable(m); aviso.hidden = false; })
+    .then(function () { btn.disabled = false; btn.textContent = "Inscribirme"; });
+});
+
+fComp.addEventListener("submit", function (ev) {
+  ev.preventDefault();
+  var email = document.getElementById("email2"), inp = document.getElementById("comprobante2");
+  var v = [
+    marcar(email, !reEmail.test(email.value.trim()) ? "Revisá el email, parece incompleto." : ""),
+    marcar(inp, !archivos.comprobante2 ? "Elegí el archivo del comprobante." : "")
+  ];
+  if (v.indexOf(false) !== -1) return;
+  var btn = document.getElementById("btn-comp"), aviso = document.getElementById("error-comp");
+  btn.disabled = true; btn.textContent = "Enviando…"; aviso.hidden = true;
+  llamar("subirComprobante", { email: email.value.trim(), archivo: archivos.comprobante2 }).then(function (r) {
+    document.getElementById("gracias-titulo").textContent = "¡Comprobante recibido!";
+    document.getElementById("gracias-texto").textContent = "Lo sumamos a tu inscripción" + (r && r.nombre ? ", " + r.nombre.split(/\s+/)[0] : "") + ". Tu lugar quedó reservado.";
+    mostrar("gracias");
+  }).catch(function (m) { aviso.textContent = errorAmigable(m); aviso.hidden = false; })
+    .then(function () { btn.disabled = false; btn.textContent = "Enviar comprobante"; });
+});
+</script>
+</body>
+</html>
