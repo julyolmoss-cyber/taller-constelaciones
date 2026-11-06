@@ -51,59 +51,61 @@
   .cielo {
     position: relative;
     overflow: hidden;
-    color: var(--crema);
+    color: var(--ciruela);
     text-align: center;
     background:
-      radial-gradient(ellipse 70% 45% at 50% 108%, rgba(255, 196, 120, .55), transparent 70%),
-      radial-gradient(ellipse 90% 60% at 50% 100%, rgba(214, 122, 160, .35), transparent 75%),
-      linear-gradient(180deg, var(--noche) 0%, var(--ciruela) 45%, var(--violeta) 85%, #9a5a8e 100%);
+      radial-gradient(ellipse 60% 40% at 50% 100%, rgba(255, 214, 160, .55), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 0% 0%, rgba(181, 140, 196, .35), transparent 70%),
+      radial-gradient(ellipse 45% 35% at 100% 100%, rgba(181, 140, 196, .3), transparent 70%),
+      linear-gradient(180deg, #f6ecf5 0%, #f3e6f1 45%, #f8e9ec 80%, #fcf1e6 100%);
     padding: 56px max(16px, env(safe-area-inset-right, 0px)) 120px max(16px, env(safe-area-inset-left, 0px));
   }
   #estrellas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .flor-vida { position: absolute; top: -40px; right: -50px; width: 260px; height: 260px; color: var(--oro); opacity: .45; pointer-events: none; }
   .cielo-contenido { position: relative; max-width: 720px; margin: 0 auto; display: grid; justify-items: center; gap: 6px; }
-  .loto { width: 64px; height: auto; color: var(--oro); margin-bottom: 8px; filter: drop-shadow(0 0 12px rgba(241, 220, 166, .45)); }
+  .loto { width: 64px; height: auto; color: var(--violeta); margin-bottom: 8px; }
   .antetitulo {
     display: flex; align-items: center; gap: 14px;
-    font-family: var(--f-titulo); letter-spacing: .32em; font-size: clamp(13px, 2.6vw, 17px);
+    font-family: var(--f-verso); font-weight: 600; font-size: clamp(26px, 5vw, 38px); line-height: 1;
   }
-  .antetitulo::before, .antetitulo::after { content: ""; width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--oro)); }
+  .antetitulo::before, .antetitulo::after { content: ""; width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--violeta)); }
   .antetitulo::after { transform: scaleX(-1); }
   h1 {
     margin: 0;
     font-family: var(--f-titulo); font-weight: 700;
     font-size: clamp(30px, 7.4vw, 60px); line-height: 1.02; letter-spacing: .01em;
     text-wrap: balance;
-    background: linear-gradient(180deg, #fffaf0 30%, var(--oro-claro) 75%, var(--oro) 100%);
+    background: linear-gradient(180deg, #5a2a68 0%, var(--ciruela) 60%, #2e1236 100%);
     -webkit-background-clip: text; background-clip: text; color: transparent;
-    text-shadow: 0 2px 30px rgba(241, 220, 166, .15);
   }
-  .subtitulo { font-family: var(--f-titulo); letter-spacing: .28em; font-size: clamp(10px, 2.1vw, 13px); opacity: .9; }
+  .subtitulo { font-family: var(--f-titulo); letter-spacing: .28em; font-size: clamp(10px, 2.1vw, 13px); color: var(--violeta); }
   .lema {
-    margin: 22px 0 6px;
-    font-family: var(--f-verso); font-style: italic; font-weight: 500;
-    font-size: clamp(24px, 5vw, 36px); line-height: 1.15;
-    color: var(--oro-claro);
+    margin: 22px 0 6px; padding: 12px 36px;
+    font-family: var(--f-verso); font-style: italic; font-weight: 600;
+    font-size: clamp(26px, 5.4vw, 40px); line-height: 1.12;
+    color: var(--ciruela);
+    background: radial-gradient(ellipse 52% 50% at 50% 50%, rgba(181, 140, 196, .38), rgba(181, 140, 196, .12) 70%, transparent 100%);
   }
-  .facilitan { margin-top: 18px; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; opacity: .8; }
-  .nombres { font-family: var(--f-titulo); font-weight: 600; letter-spacing: .08em; font-size: clamp(15px, 3.2vw, 20px); }
+  .facilitan { margin-top: 18px; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--violeta); }
+  .nombres { font-family: var(--f-titulo); font-weight: 700; letter-spacing: .08em; font-size: clamp(15px, 3.2vw, 20px); }
 
   /* ---------- Datos del taller ---------- */
   .envoltura { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
   .datos {
     position: relative; margin: -76px auto 0; max-width: 760px;
     display: grid; grid-template-columns: repeat(4, 1fr);
-    background: var(--ciruela);
-    border: 1px solid rgba(217, 180, 106, .5);
+    background: var(--papel);
+    border: 1px solid #e3cfe6;
     border-radius: 18px;
-    color: var(--crema);
-    box-shadow: 0 20px 50px -20px rgba(31, 13, 38, .6);
+    color: var(--ciruela);
+    box-shadow: 0 20px 50px -24px rgba(108, 58, 122, .45);
   }
   .dato { padding: 18px 14px; display: grid; gap: 2px; justify-items: center; text-align: center; }
-  .dato + .dato { border-left: 1px solid rgba(217, 180, 106, .28); }
-  .dato svg { width: 26px; height: 26px; color: var(--oro); margin-bottom: 4px; }
-  .dato small { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; opacity: .7; }
-  .dato strong { font-family: var(--f-titulo); font-weight: 600; font-size: 15px; letter-spacing: .04em; line-height: 1.25; }
-  .dato .precio { font-size: 20px; color: var(--oro-claro); }
+  .dato + .dato { border-left: 1px solid #e3cfe6; }
+  .dato svg { width: 26px; height: 26px; color: var(--violeta); margin-bottom: 4px; }
+  .dato small { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--tinta-suave); }
+  .dato strong { font-family: var(--f-titulo); font-weight: 700; font-size: 15px; letter-spacing: .04em; line-height: 1.25; }
+  .dato .precio { font-size: 20px; color: var(--violeta); }
 
   /* ---------- Formulario ---------- */
   main { max-width: 640px; margin: 0 auto; padding-block: 44px 28px; display: grid; gap: 22px; }
@@ -233,7 +235,8 @@
   @media (max-width: 620px) {
     .datos { grid-template-columns: 1fr 1fr; }
     .dato:nth-child(3) { border-left: 0; }
-    .dato:nth-child(n+3) { border-top: 1px solid rgba(217, 180, 106, .28); }
+    .dato:nth-child(n+3) { border-top: 1px solid #e3cfe6; }
+    .flor-vida { width: 170px; height: 170px; top: -30px; right: -40px; }
     .campos { grid-template-columns: 1fr; }
     .cielo { padding-top: 40px; }
   }
@@ -244,6 +247,12 @@
 
 <header class="cielo">
   <canvas id="estrellas" aria-hidden="true"></canvas>
+  <svg class="flor-vida" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width=".6" aria-hidden="true">
+    <circle cx="60" cy="60" r="58"/>
+    <circle cx="60" cy="60" r="20"/><circle cx="60" cy="40" r="20"/><circle cx="60" cy="80" r="20"/>
+    <circle cx="77.3" cy="50" r="20"/><circle cx="77.3" cy="70" r="20"/><circle cx="42.7" cy="50" r="20"/><circle cx="42.7" cy="70" r="20"/>
+    <circle cx="60" cy="20" r="20"/><circle cx="60" cy="100" r="20"/><circle cx="94.6" cy="40" r="20"/><circle cx="94.6" cy="80" r="20"/><circle cx="25.4" cy="40" r="20"/><circle cx="25.4" cy="80" r="20"/>
+  </svg>
   <div class="cielo-contenido">
     <svg class="loto" viewBox="0 0 64 44" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
       <path d="M32 40C26 32 25 20 32 6c7 14 6 26 0 34Z"/>
@@ -252,12 +261,12 @@
       <path d="M30 40C19 41 9 36 3 27c10-2 20 3 27 13Z"/>
       <path d="M34 40c11 1 21-4 27-13-10-2-20 3-27 13Z"/>
     </svg>
-    <div class="antetitulo">TALLER DE</div>
+    <div class="antetitulo">Taller de</div>
     <h1>Constelaciones<br>Familiares</h1>
     <div class="subtitulo">Y NUEVAS CONSTELACIONES</div>
     <p class="lema">Todo lo vivido<br>nos trajo hasta aquí</p>
     <div class="facilitan">Facilitan</div>
-    <div class="nombres">Claudia Monge &amp; Caro Sartori</div>
+    <div class="nombres">Claudia Monge y Caro Sartori</div>
   </div>
 </header>
 
@@ -464,13 +473,13 @@ var MAX_MB = 10;
     ctx.clearRect(0, 0, w, h);
     var s = t / 1000;
     estrellas.forEach(function (e) {
-      var a = .35 + .45 * Math.sin(s * e.v + e.f);
-      ctx.fillStyle = "rgba(255,246,225," + a.toFixed(3) + ")";
+      var a = .25 + .3 * Math.sin(s * e.v + e.f);
+      ctx.fillStyle = "rgba(150,95,165," + Math.max(a, .05).toFixed(3) + ")";
       ctx.beginPath(); ctx.arc(e.x, e.y, e.r, 0, 6.283); ctx.fill();
     });
     grupos.forEach(function (pts, gi) {
-      var hilo = .18 + .12 * Math.sin(s * .6 + gi);
-      ctx.strokeStyle = "rgba(217,180,106," + hilo.toFixed(3) + ")";
+      var hilo = .3 + .15 * Math.sin(s * .6 + gi);
+      ctx.strokeStyle = "rgba(190,145,70," + hilo.toFixed(3) + ")";
       ctx.lineWidth = .8;
       ctx.beginPath();
       pts.forEach(function (p, i) {
@@ -481,7 +490,7 @@ var MAX_MB = 10;
       pts.forEach(function (p) {
         var x = p.x + Math.sin(s * .3 + p.f) * 3, y = p.y + Math.cos(s * .25 + p.f) * 3;
         var g = ctx.createRadialGradient(x, y, 0, x, y, 7);
-        g.addColorStop(0, "rgba(255,240,200,.95)"); g.addColorStop(1, "rgba(255,240,200,0)");
+        g.addColorStop(0, "rgba(200,150,70,.85)"); g.addColorStop(.35, "rgba(230,190,110,.45)"); g.addColorStop(1, "rgba(230,190,110,0)");
         ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, 7, 0, 6.283); ctx.fill();
       });
     });
